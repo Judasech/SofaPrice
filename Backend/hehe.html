@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наш проект с Лёней</title>
+</head>
+<body>
+    <h1> Время обновления страницы</h1>
+    <p>Время: {{.Time}} </p>
+    <h2>Submit Product Form</h2>
+	<form action="/" method="post">
+
+		<label for="width">Габариты(ширина):</label>
+		<input type="text" id="width" name="size_width">
+		<br>
+
+		<label for="depth">Габариты(глубина):</label>
+		<input type="text" id="depth" name="size_depth">
+		<br>
+
+		<label for="height">Габариты(высота):</label>
+		<input type="text" id="height" name="size_height">
+		<br>
+
+		<label for="bedWidth">Спальная ширина:</label>
+		<input type="text" id="bedWidth" name="sleep_Width">
+		<br>
+
+		<label for="bedDepth">Спальная глубина:</label>
+		<input type="text" id="bedDepth" name="sleep_Depth">
+		<br>
+
+		<label for="mechanism">Механизм:</label>
+		<input type="text" id="mechanism" name="mechanism">
+		<br>
+
+		<label for="linenBox">Бельевой ящик:</label>
+		<input type="text" id="linenBox" name="linen_drawer">
+		<br>
+
+		<label for="filler">Наполнитель:</label>
+		<input type="text" id="filler" name="filler">
+		<br>
+
+		<label for="frameMaterial">Материал каркаса:</label>
+		<input type="text" id="frameMaterial" name="frame_Material">
+		<br>
+
+		<label for="fabric">Ткань:</label>
+		<input type="text" id="fabric" name="textile">
+		<br>
+
+		<label for="armrests">Подлокотники:</label>
+		<input type="text" id="armrests" name="armrests">
+		<br>
+
+		<label for="decorativePillows">Декоративные подушки:</label>
+		<input type="text" id="decorativePillows" name="decorative_Pillows">
+		<br>
+
+		<label for="lifetime">Срок службы(годы):</label>
+		<input type="text" id="lifetime" name="lifetime">
+		<br>
+
+		<label for="configuration">Конфигурация:</label>
+		<input type="text" id="configuration" name="configuration">
+		<br>
+
+		<label for="weight">Вес(кг):</label>
+		<input type="text" id="weight" name="weight">
+		<br>
+
+		<label for="load">Нагрузка(кг):</label>
+		<input type="text" id="load" name="load">
+		<br>
+
+		<input type="submit" value="Submit">
+	</form>
+    <p>Предполагаемая цена: {{.Estimated_price}}</p>
+
+	{{if .Submitted}}
+	<h3>Form Data Submitted</h3>
+	{{range $key, $value := .FormData}}
+		<p>{{$key}}: {{$value}}</p>
+	{{end}}
+	{{end}}
+</body>
+</html>
